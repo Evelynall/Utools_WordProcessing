@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- 设置编码和标题 -->
+    <meta charset="utf-8">
+    <title>格式转换器</title>
+    <!-- 给textarea添加宽度,让高度自适应内容且可以手动拖拽调整 -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- 在head标签中加载preload.js -->
+    <script src="js/preload.js" type="module" preload></script>
+</head>
+
+<body>
+    <div class="div1">
+        <div class="threeBlocks" style="margin-left: 7px;margin-right: 9px;">
+            <!-- 输入文本: -->
+            <textarea id="input" placeholder="输入文本..." rows="10"></textarea>
+        </div>
+        <div class="threeBlocks">
+            <div class="container">
+                <div class="middleDiv" style="height: 46%;">
+                    <!-- 文本匹配: -->
+                    <div id="matchContainer">
+                        <div class="matchTextarea3" style="margin-bottom: 33px;float: left;">
+                            <textarea class="Normal" placeholder="匹配文本" rows="10" style="width: 100%;"></textarea>
+                        </div>
+                        <div class="matchTextarea4" style="margin-bottom: 33px;float: right;width: 20%;"><button
+                                id="appbutton" class="addMatchButton">添加</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="middleDiv" style="height: 8%;">
+                    <div style="float: left;"><button id="btn1" class="button1">转换</button></div>
+                    <div style="float: left;margin-left: 7px;"><button id="copyBtn" class="button1">复制</button></div>
+                </div>
+                <div class="middleDiv" style="height: 46%;margin-bottom: 0px;">
+                    <!-- 文本替换: -->
+                    <div id="replaceContainer">
+                        <textarea class="Normal2" placeholder="替换文本" rows="10"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="threeBlocks">
+            <div class="div1">
+                <!-- 输出文本: -->
+                <textarea id="output" placeholder="输出文本" rows="10"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <!-- 文本修改代码 -->
+    <script src="js/MatchingProcessing.js"></script>
+    <!-- 在页面加载完成后调用setInputValue函数 -->
+    <script>
+        function setInputValue(payload) {
+            // 获取textarea元素
+            const textarea = document.getElementById('input');
+
+            // 将payload值设置为textarea的内容
+            textarea.value = payload;
+        }
+
+        // 在插件打开时，将payload值输入到textarea元素中
+        utools.onPluginEnter(({ payload }) => {
+            setInputValue(payload);
+        });
+    </script>
+    <script>
+
+        var entry = 1
+        // 添加匹配项按钮的点击事件监听器
+        appbutton.addEventListener("click", function (event) {
+            if (entry <= 3) {
+                entry++
+                if (event.target.classList.contains("addMatchButton")) {
+                    createMatchReplaceElements();
+                }
+            }
+        });
+
+        // 动态创建匹配项和替换项的输入框
+        function createMatchReplaceElements() {
+            let matchContainer = document.getElementById("matchContainer");
+            let replaceContainer = document.getElementById("replaceContainer");
+
+            // 创建新的输入框
+            let replaceTextarea = document.createElement("textarea");
+            replaceTextarea.className = "Normal2";
+            replaceTextarea.placeholder = "替换文本";
+            let matchTextarea = document.createElement("textarea");
+            matchTextarea.className = "Normal";
+            matchTextarea.placeholder = "匹配文本";
+
+
+            // 创建删除按钮
+            let deleteButton = document.createElement("button");
+            deleteButton.className = "deleteButton";
+            deleteButton.textContent = "删除";
+            deleteButton.addEventListener("click", function () {
+                entry = entry - 1
+                matchContainer.removeChild(matchDiv);
+                replaceContainer.removeChild(replaceDiv);
+            });
+
+            // 创建包含输入框和删除按钮的 div
+
+            let replaceDiv = document.createElement("div");
+            matchTextarea.className = "matchTextarea2";
+            replaceDiv.appendChild(replaceTextarea);
+            let matchDiv = document.createElement("div");
+            matchTextarea.className = "matchTextarea1";
+            matchDiv.appendChild(matchTextarea);
+            matchDiv.appendChild(deleteButton);
+
+
+            // 将新的输入框添加到页面
+            matchContainer.appendChild(matchDiv);
+            replaceContainer.appendChild(replaceDiv);
+        }
+    </script>
+</body>
+
+</html>

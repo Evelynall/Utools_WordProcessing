@@ -1,0 +1,188 @@
+textarea {
+  width: 91%;
+  height: 95%;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  /* 圆角 50px就是全圆 */
+  border-color: #70e2ff;
+  background-color: #f9faff;
+  border: 0px;
+  padding: 10px;
+  margin-top: 1px;
+  margin-right: 1px;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.Normal {
+  /* resize: vertical; 自定义大小代码*/
+  border-radius: 10px;
+  /* background-color: #ffffff; */
+}
+
+.Normal2 {
+  /* resize: vertical; 自定义大小代码*/
+  border-radius: 10px;
+  /* background-color: #ffffff; */
+  height: 15px;
+}
+
+/* 使用Flexbox让元素竖直排列 */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* 按钮设置 */
+.button1 {
+  color: #037ba7;
+  /* 文本颜色 */
+  background: #f9faff;
+  /* 背景颜色 */
+  padding: 8px 44px;
+  /* 填充，用来撑开按钮 */
+  border-radius: 10px;
+  /* 圆角 50px就是全圆 */
+  transition-duration: 0.15s;
+  /* 过渡时长 */
+  margin-bottom: 1rem;
+  vertical-align: middle;
+  border: 0px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 3px 3px 5px rgba(82, 168, 236, 0.3);
+}
+
+.button1:hover {
+  /* 鼠标移上去的动画 */
+  transform: scale(1.05);
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
+}
+
+.match-replace>div {
+  width: 50%;
+  /* 每个div占50%宽度 */
+  height: 100%;
+  float: left;
+}
+
+table {
+  border: 0px;
+  padding: 0px;
+  border-spacing: 20px;
+  height: 100%;
+}
+
+/* 设置html和body占满屏幕，用于后续使用 */
+html,
+body {
+  height: 98%;
+}
+
+/* div占满body */
+.div1 {
+  height: 100%;
+  width: 100%;
+}
+
+/* 将画面分成三份 */
+
+.threeBlocks {
+  width: 32%;
+  float: left;
+  height: 100%;
+  margin-right: 6.5px;
+  /* resize: vertical; 自定义大小代码*/
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  /* 圆角 50px就是全圆 */
+  border-color: #70e2ff;
+  background-color: #f9faff;
+  border: 0px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 3px 3px 5px rgba(82, 168, 236, 0.3);
+
+}
+
+
+/* 中间大块的div分成三块 */
+.middleDiv {
+  background-color: #f9faff;
+  border-radius: 10px;
+  /* 圆角 50px就是全圆 */
+  border: 0px;
+
+  padding: 10px;
+  margin-top: 1px;
+}
+
+.addMatchButton {
+  color: #037ba7;
+  /* 文本颜色 */
+  background: #f9faff;
+  /* 背景颜色 */
+  padding: 10px;
+  /* 填充，用来撑开按钮 */
+  border-radius: 10px;
+  /* 圆角 50px就是全圆 */
+  transition-duration: 0.15s;
+  /* 过渡时长 */
+  margin-bottom: 1rem;
+  vertical-align: middle;
+  border: 0px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 3px 3px 5px rgba(82, 168, 236, 0.3);
+}
+
+.addMatchButton:hover {
+  /* 鼠标移上去的动画 */
+  transform: scale(1.05);
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
+}
+
+.matchTextarea1 {
+  float: left;
+  height: 15px;
+  width: 71%;
+}
+
+.matchTextarea2 {
+  float: right;
+  height: 15px;
+  width: 30%;
+}
+
+.matchTextarea4 {
+  float: left;
+  height: 15px;
+  width: 30%;
+}
+
+.matchTextarea3 {
+  float: right;
+  height: 15px;
+  width: 71%;
+  background-color: #f9faff;
+}
+
+.deleteButton {
+  color: #037ba7;
+  /* 文本颜色 */
+  background: #f9faff;
+  /* 背景颜色 */
+  padding: 10px;
+  /* 填充，用来撑开按钮 */
+  border-radius: 10px;
+  /* 圆角 50px就是全圆 */
+  transition-duration: 0.15s;
+  /* 过渡时长 */
+  margin-bottom: 1rem;
+  vertical-align: middle;
+  border: 0px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 3px 3px 5px rgba(82, 168, 236, 0.3);
+}
+
+.deleteButton:hover {
+  /* 鼠标移上去的动画 */
+  transform: scale(1.05);
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
+}

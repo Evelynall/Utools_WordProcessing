@@ -1,0 +1,18 @@
+{
+	"main": "index.html",
+	"preload": "js/preload.js",
+	"logo": "logo.png",
+	"features": [
+		{
+		  "code": "text",
+		  "explain": "文本查找替换",
+	      "cmds": [
+	        {
+	          "type": "over",
+	          "label": "查找替换",
+	          "minLength": 1
+	        }
+	      ]
+		}
+	]
+}
